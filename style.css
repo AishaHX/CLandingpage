@@ -1,0 +1,318 @@
+@import 'meyerreset.css';
+
+*{
+    box-sizing: border-box;
+}
+
+/*SETTINGS*/
+html{
+    --black:#333;
+    --white: #efefef;
+    --color:rgb(60,130, 246);
+    --dark:rgb(31, 41, 55);
+    --light:lightblue;
+}
+picture{
+    display: block;
+    max-width: 600px;
+
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*dev style*/
+/*body * {
+    border : 2px solid blue;
+    padding: 2px;
+}*/
+
+
+/* Structure*/
+/*
+*To have a a sticky footer, we need to use flexbox to the body and make it column, and then tell main to expand so they take up 
+the availabe space in thier container 
+**/
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+}
+/* telling the main to fill up the space ,main to expand so they take up 
+the availabe space in thier container */
+main{
+    flex-grow: 1;
+    /*border:10px solid pink*/
+}
+
+inner-column{
+    display: block;
+    /*border: 4px solid orange;*/
+    padding: 10px;
+    /* centering inner columns*/
+    width: 98%;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+
+
+}
+header inner-column{
+    padding: 10px;
+}
+section{
+    /*border: 4px solid lime;*/
+
+}
+header, footer{
+    /*border: 4px solid red;*/
+
+
+}
+/* TYPOGRAPHY
+*/
+.loud-voic {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.midle-loudvoice{
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.1;
+
+}
+
+@media (min-width: 700px) {
+    .loud-voic{
+        font-size: 40px;
+
+     } 
+
+    
+}
+.calm-voice {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    line-height:1.3;
+
+}
+
+/*
+*Components
+*/
+
+.button{
+    display: inline-block;
+  background: #b4bdc0;    
+   color: white;
+    font-size: 1.2rem;
+    padding: 0.6em 1em;
+    border-radius: 6px;
+
+}
+
+/*Modules*/
+graphic-diptych{
+    display: flex;
+   flex-direction: column;
+    gap: 20px;
+   /* border: 8px solid dodgerblue;*/
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+graphic-diptych text-content{ 
+    display: block;
+    
+
+
+}
+graphic-diptych text-content p{
+    margin-top: 10px;
+
+}
+graphic-diptych text-content .button{
+    margin-top: 10px;
+}
+graphic-diptych picture{ 
+}
+
+@media (min-width: 700px){
+    graphic-diptych , graphic-diptychh{
+        flex-direction: row-reverse;
+        gap:20px;
+
+    }
+    graphic-diptych :is( text-content, picture )
+       {
+           flex-basis: 50%;
+           /*border: 1px solid blue ;*/
+
+        }
+    
+}
+
+/*Style header*/
+graphic-diptychh{
+    display: flex;
+   flex-direction: row;
+    gap: 200px;
+   /* border: 8px solid dodgerblue;*/
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.lists{
+    gap: 13px;
+    display: flex;
+   
+
+
+
+}
+
+
+.header{    
+    background: #b4bdc0;
+}
+
+    .welcome{
+        /*background-color: var(--dark);*/
+        background: #f7f3f5;
+        color: black;
+    }
+
+    /*ourproduct style*/
+ .our-sproducts{
+     background: var(--white);
+     color: #333;
+     padding: 20px;
+ }
+
+ .box1, .box2,.box3,.box4{
+    border: 3px #687477 solid;
+     width:140px;
+	height:100px;
+	margin:20px;
+    
+ }
+    
+
+ products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr)
+
+ }
+.headder, quote-block{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+    
+}
+/*style qoute*/
+.quote{
+    /*background: rgb(225, 225, 225);*/
+    background: #F2E9EB;
+    color: #000000;
+}
+
+figcaption{
+    display: grid;
+    padding: 0 1rem 1rem 0;
+    font-weight: 100;
+    justify-content: end;
+    justify-items: end;
+}
+
+/*call to action*/
+.call-action{
+margin-top: 20px;
+background-color: var(--white);
+display: flex;
+}
+.call-action-color{
+   /* background: rgb(24, 69, 148);*/
+   background: #E3DCD2;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding:5rem;
+
+}
+
+
+.action{
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+
+
+}
+.header2{
+    margin-left:26px;
+    align-items: center;
+}
+
+.butt{
+width: 80px;
+height:50px;
+align-items: right;
+justify-items: right;
+background: #b4bdc0;
+color: white; 
+}
+
+
+
+.action :is(.left  )
+{
+    flex-basis: 50%;
+    /*border: 1px solid blue ;*/
+
+ }
+
+
+ /*styling footer*/
+ 
+ .footer-color{
+     background: #687477;
+     padding: 20px;
+     color: white;
+     display: flex;
+     justify-content: center;
+     justify-items: center;
+
+ }
+
+ .imgg{
+     height: 50px;
+ }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
